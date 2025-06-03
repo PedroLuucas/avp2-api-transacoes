@@ -1,0 +1,6 @@
+
+CREATE TABLE transacoes (
+  id CHAR(36) PRIMARY KEY,
+  valor DECIMAL(10,2) NOT NULL,
+  dataHora DATETIME NOT NULL
+);
