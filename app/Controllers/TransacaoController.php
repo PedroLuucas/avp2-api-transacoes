@@ -7,16 +7,18 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use App\Models\Transacao;
 use App\Utils\Validator;
 use App\Services\EstatisticaService;
-use PDO;
+use PDO; // Manter este use
 use Exception;
+// use Psr\Container\ContainerInterface; // <--- REMOVA ESTE USE
 
-class TransacaoController
+class TransacaoController // Certifique-se que o nome da classe está no singular
 {
     private PDO $db;
 
-    public function __construct()
+    // <--- Mude o construtor para receber PDO $db diretamente
+    public function __construct(PDO $db)
     {
-        $this->db = \Slim\Factory\AppFactory::getContainer()->get('db');
+        $this->db = $db;
     }
 
     public function criar(Request $request, Response $response): Response
@@ -30,9 +32,13 @@ class TransacaoController
         try {
             $transacao = new Transacao($this->db);
             $transacao->criar($data);
-            return $response->withStatus(201);
+            $response->getBody()->write(json_encode(['message' => 'Criado com sucesso']));
+            return $response->withHeader('Content-Type', 'application/json')->withStatus(201);
         } catch (Exception $e) {
-            return $response->withStatus(400); // JSON inválido ou erro de inserção
+            // Adicionado log para depuração, remova em produção
+            error_log("Erro ao criar transação: " . $e->getMessage());
+            $response->getBody()->write(json_encode(['error' => 'Erro interno do servidor.'])); // Mensagem genérica para o cliente
+            return $response->withHeader('Content-Type', 'application/json')->withStatus(400);
         }
     }
 

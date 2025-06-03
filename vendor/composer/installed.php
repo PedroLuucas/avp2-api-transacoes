@@ -3,7 +3,7 @@
         'name' => 'usuario/api-transacoes',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'f924637a7823575b550c8cf4375ebf3ef640f367',
+        'reference' => 'd88b447a63fb24828e3edeff4baae9482f84ee71',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -133,7 +133,7 @@
         'usuario/api-transacoes' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'f924637a7823575b550c8cf4375ebf3ef640f367',
+            'reference' => 'd88b447a63fb24828e3edeff4baae9482f84ee71',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
