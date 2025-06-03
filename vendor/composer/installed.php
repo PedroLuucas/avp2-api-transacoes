@@ -1,24 +1,15 @@
 <?php return array(
     'root' => array(
-        'name' => '__root__',
+        'name' => 'usuario/api-transacoes',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '8c01d876e156af7229dd85aa10aaae5f85476697',
+        'reference' => 'f924637a7823575b550c8cf4375ebf3ef640f367',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
-        '__root__' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'reference' => '8c01d876e156af7229dd85aa10aaae5f85476697',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'fig/http-message-util' => array(
             'pretty_version' => '1.1.5',
             'version' => '1.1.5.0',
@@ -136,6 +127,15 @@
             'reference' => '0cc9dd0f17f61d8131e7df6b84bd344899fe2608',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/polyfill-php80',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'usuario/api-transacoes' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'f924637a7823575b550c8cf4375ebf3ef640f367',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
