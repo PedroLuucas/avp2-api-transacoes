@@ -1,7 +1,9 @@
 {
+  "name": "usuario/api-transacoes",
+  "description": "API RESTful de transações com Slim Framework",
   "require": {
-    "slim/slim": "^4.0",
-    "slim/psr7": "^1.4"
+    "slim/slim": "^4.10",
+    "slim/psr7": "^1.5"
   },
   "autoload": {
     "psr-4": {
