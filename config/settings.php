@@ -1,15 +1,13 @@
 <?php
 use Slim\App;
-use Psr\Container\ContainerInterface; // Manter este use
+use Psr\Container\ContainerInterface;
 
 return function (App $app) {
-    // O container agora é o seu SimpleContainer que foi definido em index.php
+    
     $container = $app->getContainer();
-
-    // Configuração do banco
+    
     $config = require __DIR__ . '/database.php';
-
-    // Registrar a factory PDO no container
+    
     $container->set('pdo_factory', function () use ($config) {
         return new PDO(
             "mysql:host={$config['host']};dbname={$config['dbname']};charset=utf8mb4",
