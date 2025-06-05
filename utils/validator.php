@@ -6,7 +6,7 @@ class Validator
 {
     public static function validarTransacao(array $data): bool
     {
-        // Verifica se todos os campos obrigatórios existem
+        
         if (!isset($data['id'], $data['valor'], $data['dataHora'])) {
             return false;
         }
